@@ -51,19 +51,20 @@ def display_videos_in_grid(videos_paths, grid_columns=3):
     return selected_videos
 
 def load_exercise_images(value):
-    exercise_folder = os.path.join(".\\assets\\img", f"{value}_exercises")
+    #exercise_folder = os.path.join(".\\assets\\img", f"{value}_exercises")
+    exercise_folder = os.path.join("./assets/img", f"{value}_exercises")
     exercise_images = [os.path.join(exercise_folder, f) for f in os.listdir(exercise_folder) if f.endswith(".webp")]    
     return exercise_images
 
 def load_exercise_videos(value):
-    exercise_folder = os.path.join(".\\assets\\img", f"{value}_exercises")
+    exercise_folder = os.path.join("./assets/img", f"{value}_exercises")
     exercise_videos = [os.path.join(exercise_folder, f) for f in os.listdir(exercise_folder) if f.endswith(".mp4")]
     return exercise_videos
 
 def main():
 
     st.title("Gymapp")
-    images_folder = ".\\assets\\icons\\"
+    images_folder = "./assets/icons/"
     # Check if the folder exists
     if not os.path.exists(images_folder):
         st.error("Folder not found. Please enter a valid path.")
